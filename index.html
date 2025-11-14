@@ -1,257 +1,241 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 2.5 Pro Pricing Calculator</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f9;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #10B981; /* Emerald 500 */
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.4);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #10B981;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
 </head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Gemini 2.5 Pro Pricing Calculator&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Tailwind CSS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Inter font --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f7f7f9;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>input[type="range"]::-webkit-slider-thumb {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-appearance: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>appearance: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #10B981; /* Emerald 500 */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.4);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>input[type="range"]::-moz-range-thumb {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #10B981;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body class="p-4 sm:p-8 flex items-center justify-center min-h-screen"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="calculator-app" class="w-full max-w-4xl bg-white shadow-2xl rounded-xl p-6 sm:p-10 border border-gray-100"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Header --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="text-center mb-10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-3xl sm:text-4xl font-extrabold text-gray-800"&gt;Gemini 2.5 Pro Cost Estimator&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg text-gray-500 mt-2"&gt;Calculate your expected API costs for text generation.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;main class="grid lg:grid-cols-3 gap-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Left Column: Input Controls --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="lg:col-span-2 space-y-8 p-6 bg-indigo-50 rounded-xl"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Cases Input (Slider) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="cases-range" class="block text-sm font-medium text-gray-700 flex justify-between"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Total Number of Cases (API Calls)&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span id="cases-value" class="font-bold text-indigo-600"&gt;10,000&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Removed inline oninput handler --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="range" id="cases-range" min="10000" max="100000" value="10000" step="1000" class="w-full h-2 bg-indigo-200 rounded-lg appearance-none cursor-pointer range-lg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between text-xs text-gray-500"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;10,000&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;100,000&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Tokens Input (Grid) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid sm:grid-cols-2 gap-6 pt-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Input Tokens --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label for="input-tokens" class="block text-sm font-medium text-gray-700"&gt;Average Input Tokens / Case&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Removed inline oninput handler --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="number" id="input-tokens" value="2000" min="1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500"&gt;e.g., Prompt + History size.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Output Tokens --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label for="output-tokens" class="block text-sm font-medium text-gray-700"&gt;Average Output Tokens / Case&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Removed inline oninput handler --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="number" id="output-tokens" value="500" min="1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500"&gt;e.g., Generated response size (includes thinking tokens).&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Right Column: Results &amp; Summary --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="lg:col-span-1 space-y-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-6 bg-white border border-gray-200 rounded-xl shadow-lg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2"&gt;Estimated Total Cost&lt;/h2&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Total Cost Display --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center py-4 bg-emerald-50 rounded-lg border border-emerald-200"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm font-medium text-emerald-700"&gt;Total Estimated Cost&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p id="total-cost" class="text-4xl font-extrabold text-emerald-600"&gt;$1,025.00&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Breakdown --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-6 space-y-3 text-sm"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-gray-600"&gt;Pricing Tier Used:&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span id="pricing-tier" class="font-semibold text-gray-800 text-right"&gt;Short Prompt (≤ 200K Tokens)&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between border-t pt-3"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-gray-600"&gt;Total Input Tokens:&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span id="total-input-tokens" class="font-semibold text-gray-800"&gt;20,000,000&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-gray-600"&gt;Total Output Tokens:&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span id="total-output-tokens" class="font-semibold text-gray-800"&gt;5,000,000&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Pricing Legend --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-xs text-gray-500 p-4 bg-white rounded-lg border border-gray-200"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-gray-700 mb-2"&gt;Gemini 2.5 Pro Pricing (Per 1 Million Tokens)&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;table class="w-full text-left"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="py-1"&gt;Tier&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="py-1"&gt;Input (USD)&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="py-1"&gt;Output (USD)&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;td class="py-1"&gt;≤ 200K Tokens&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;td class="py-1 font-mono"&gt;$1.25&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;td class="py-1 font-mono"&gt;$10.00&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;td class="py-1"&gt;&gt; 200K Tokens&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;td class="py-1 font-mono"&gt;$2.50&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;td class="py-1 font-mono"&gt;$15.00&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Footer / Disclaimer --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer class="mt-10 pt-6 border-t border-gray-200 text-center text-sm text-gray-500"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>*Pricing based on public Google AI Developer pricing tiers (per 1M tokens). Calculations do not include context caching, grounding, or other service fees.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Wrapping the entire script in an IIFE to create a private scope</p>
-<p class="p1"><span class="Apple-converted-space">        </span>(function() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Constants</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const M = 1000000; // One Million</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const TOKEN_LIMIT = 200000; // The threshold for the pricing tier</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Pricing Tiers (cost per 1 Million tokens in USD)</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const PRICING_TIERS = {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>SHORT: {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>input: 1.25,</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>output: 10.00,</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>tierName: "Short Prompt (≤ 200K Tokens)"</p>
-<p class="p1"><span class="Apple-converted-space">                </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                </span>LONG: {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>input: 2.50,</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>output: 15.00,</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>tierName: "Long Prompt (&gt; 200K Tokens)"</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>function formatNumber(number) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>return new Intl.NumberFormat().format(Math.round(number));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>function formatCurrency(number) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>return new Intl.NumberFormat('en-US', {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>style: 'currency',</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>currency: 'USD'</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}).format(number);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>function calculateCost() {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>// 1. Get Input Values</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const cases = parseInt(document.getElementById('cases-range').value) || 0;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const avgInputTokens = parseInt(document.getElementById('input-tokens').value) || 0;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const avgOutputTokens = parseInt(document.getElementById('output-tokens').value) || 0;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (cases === 0 || avgInputTokens === 0) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('total-cost').innerText = formatCurrency(0);</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('total-input-tokens').innerText = formatNumber(0);</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('total-output-tokens').innerText = formatNumber(0);</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('pricing-tier').innerText = "N/A";</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>// 2. Determine Pricing Tier</p>
-<p class="p1"><span class="Apple-converted-space">                </span>let tier;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (avgInputTokens &lt;= TOKEN_LIMIT) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>tier = PRICING_TIERS.SHORT;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>tier = PRICING_TIERS.LONG;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>// 3. Calculate Totals</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const totalInputTokens = cases * avgInputTokens;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const totalOutputTokens = cases * avgOutputTokens;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>// 4. Calculate Cost</p>
-<p class="p1"><span class="Apple-converted-space">                </span>// Cost = (Total Input Tokens / 1M) * Input Rate + (Total Output Tokens / 1M) * Output Rate</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const inputCost = (totalInputTokens / M) * tier.input;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const outputCost = (totalOutputTokens / M) * tier.output;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const totalCost = inputCost + outputCost;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>// 5. Update UI</p>
-<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('total-cost').innerText = formatCurrency(totalCost);</p>
-<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('total-input-tokens').innerText = formatNumber(totalInputTokens);</p>
-<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('total-output-tokens').innerText = formatNumber(totalOutputTokens);</p>
-<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('pricing-tier').innerText = tier.tierName;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Use window.onload to ensure DOM elements and functions are ready before attaching listeners</p>
-<p class="p1"><span class="Apple-converted-space">            </span>window.onload = function() {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>// DOM references</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const casesRange = document.getElementById('cases-range');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const casesValueDisplay = document.getElementById('cases-value');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const inputTokensInput = document.getElementById('input-tokens');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const outputTokensInput = document.getElementById('output-tokens');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>// Function to update the slider display value and trigger calculation</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const updateCasesDisplayAndCalculate = () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>casesValueDisplay.innerText = new Intl.NumberFormat().format(casesRange.value);</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>calculateCost();<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>// Initial setup: Set initial value display and run first calculation</p>
-<p class="p1"><span class="Apple-converted-space">                </span>updateCasesDisplayAndCalculate();<span class="Apple-converted-space"> </span></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>// Attach listeners to trigger calculateCost() when inputs change</p>
-<p class="p1"><span class="Apple-converted-space">                </span>casesRange.addEventListener('input', updateCasesDisplayAndCalculate);</p>
-<p class="p1"><span class="Apple-converted-space">                </span>inputTokensInput.addEventListener('input', calculateCost);</p>
-<p class="p1"><span class="Apple-converted-space">                </span>outputTokensInput.addEventListener('input', calculateCost);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>};</p>
-<p class="p1"><span class="Apple-converted-space">        </span>})(); // End of IIFE</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<body class="p-4 sm:p-8 flex items-center justify-center min-h-screen">
+
+    <div id="calculator-app" class="w-full max-w-4xl bg-white shadow-2xl rounded-xl p-6 sm:p-10 border border-gray-100">
+
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-800">Gemini 2.5 Pro Cost Estimator</h1>
+            <p class="text-lg text-gray-500 mt-2">Calculate your expected API costs for text generation.</p>
+        </header>
+
+        <main class="grid lg:grid-cols-3 gap-8">
+            <!-- Left Column: Input Controls -->
+            <div class="lg:col-span-2 space-y-8 p-6 bg-indigo-50 rounded-xl">
+                <!-- Cases Input (Slider) -->
+                <div class="space-y-2">
+                    <label for="cases-range" class="block text-sm font-medium text-gray-700 flex justify-between">
+                        <span>Total Number of Cases (API Calls)</span>
+                        <span id="cases-value" class="font-bold text-indigo-600">10,000</span>
+                    </label>
+                    <!-- Removed inline oninput handler -->
+                    <input type="range" id="cases-range" min="10000" max="100000" value="10000" step="1000" class="w-full h-2 bg-indigo-200 rounded-lg appearance-none cursor-pointer range-lg">
+                    <div class="flex justify-between text-xs text-gray-500">
+                        <span>10,000</span>
+                        <span>100,000</span>
+                    </div>
+                </div>
+
+                <!-- Tokens Input (Grid) -->
+                <div class="grid sm:grid-cols-2 gap-6 pt-4">
+                    <!-- Input Tokens -->
+                    <div class="space-y-2">
+                        <label for="input-tokens" class="block text-sm font-medium text-gray-700">Average Input Tokens / Case</label>
+                        <!-- Removed inline oninput handler -->
+                        <input type="number" id="input-tokens" value="2000" min="1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-gray-900">
+                        <p class="text-xs text-gray-500">e.g., Prompt + History size.</p>
+                    </div>
+
+                    <!-- Output Tokens -->
+                    <div class="space-y-2">
+                        <label for="output-tokens" class="block text-sm font-medium text-gray-700">Average Output Tokens / Case</label>
+                        <!-- Removed inline oninput handler -->
+                        <input type="number" id="output-tokens" value="500" min="1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-gray-900">
+                        <p class="text-xs text-gray-500">e.g., Generated response size (includes thinking tokens).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Results & Summary -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Estimated Total Cost</h2>
+
+                    <!-- Total Cost Display -->
+                    <div class="text-center py-4 bg-emerald-50 rounded-lg border border-emerald-200">
+                        <p class="text-sm font-medium text-emerald-700">Total Estimated Cost</p>
+                        <p id="total-cost" class="text-4xl font-extrabold text-emerald-600">$1,025.00</p>
+                    </div>
+
+                    <!-- Breakdown -->
+                    <div class="mt-6 space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Pricing Tier Used:</span>
+                            <span id="pricing-tier" class="font-semibold text-gray-800 text-right">Short Prompt (≤ 200K Tokens)</span>
+                        </div>
+                        <div class="flex justify-between border-t pt-3">
+                            <span class="text-gray-600">Total Input Tokens:</span>
+                            <span id="total-input-tokens" class="font-semibold text-gray-800">20,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Total Output Tokens:</span>
+                            <span id="total-output-tokens" class="font-semibold text-gray-800">5,000,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Legend -->
+                <div class="text-xs text-gray-500 p-4 bg-white rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-2">Gemini 2.5 Pro Pricing (Per 1 Million Tokens)</p>
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr>
+                                <th class="py-1">Tier</th>
+                                <th class="py-1">Input (USD)</th>
+                                <th class="py-1">Output (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-1">≤ 200K Tokens</td>
+                                <td class="py-1 font-mono">$1.25</td>
+                                <td class="py-1 font-mono">$10.00</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1">> 200K Tokens</td>
+                                <td class="py-1 font-mono">$2.50</td>
+                                <td class="py-1 font-mono">$15.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+            
+        <!-- Footer / Disclaimer -->
+        <footer class="mt-10 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
+            *Pricing based on public Google AI Developer pricing tiers (per 1M tokens). Calculations do not include context caching, grounding, or other service fees.
+        </footer>
+    </div>
+
+    <script>
+        // Wrapping the entire script in an IIFE to create a private scope
+        (function() {
+            // Constants
+            const M = 1000000; // One Million
+            const TOKEN_LIMIT = 200000; // The threshold for the pricing tier
+
+            // Pricing Tiers (cost per 1 Million tokens in USD)
+            const PRICING_TIERS = {
+                SHORT: {
+                    input: 1.25,
+                    output: 10.00,
+                    tierName: "Short Prompt (≤ 200K Tokens)"
+                },
+                LONG: {
+                    input: 2.50,
+                    output: 15.00,
+                    tierName: "Long Prompt (> 200K Tokens)"
+                }
+            };
+
+            function formatNumber(number) {
+                return new Intl.NumberFormat().format(Math.round(number));
+            }
+
+            function formatCurrency(number) {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(number);
+            }
+
+            function calculateCost() {
+                // 1. Get Input Values
+                const cases = parseInt(document.getElementById('cases-range').value) || 0;
+                const avgInputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+                const avgOutputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+
+                if (cases === 0 || avgInputTokens === 0) {
+                    document.getElementById('total-cost').innerText = formatCurrency(0);
+                    document.getElementById('total-input-tokens').innerText = formatNumber(0);
+                    document.getElementById('total-output-tokens').innerText = formatNumber(0);
+                    document.getElementById('pricing-tier').innerText = "N/A";
+                    return;
+                }
+
+                // 2. Determine Pricing Tier
+                let tier;
+                if (avgInputTokens <= TOKEN_LIMIT) {
+                    tier = PRICING_TIERS.SHORT;
+                } else {
+                    tier = PRICING_TIERS.LONG;
+                }
+
+                // 3. Calculate Totals
+                const totalInputTokens = cases * avgInputTokens;
+                const totalOutputTokens = cases * avgOutputTokens;
+
+                // 4. Calculate Cost
+                // Cost = (Total Input Tokens / 1M) * Input Rate + (Total Output Tokens / 1M) * Output Rate
+                const inputCost = (totalInputTokens / M) * tier.input;
+                const outputCost = (totalOutputTokens / M) * tier.output;
+                const totalCost = inputCost + outputCost;
+
+                // 5. Update UI
+                document.getElementById('total-cost').innerText = formatCurrency(totalCost);
+                document.getElementById('total-input-tokens').innerText = formatNumber(totalInputTokens);
+                document.getElementById('total-output-tokens').innerText = formatNumber(totalOutputTokens);
+                document.getElementById('pricing-tier').innerText = tier.tierName;
+            }
+
+            // Use window.onload to ensure DOM elements and functions are ready before attaching listeners
+            window.onload = function() {
+                // DOM references
+                const casesRange = document.getElementById('cases-range');
+                const casesValueDisplay = document.getElementById('cases-value');
+                const inputTokensInput = document.getElementById('input-tokens');
+                const outputTokensInput = document.getElementById('output-tokens');
+
+                // Function to update the slider display value and trigger calculation
+                const updateCasesDisplayAndCalculate = () => {
+                    casesValueDisplay.innerText = new Intl.NumberFormat().format(casesRange.value);
+                    calculateCost(); 
+                };
+
+                // Initial setup: Set initial value display and run first calculation
+                updateCasesDisplayAndCalculate(); 
+
+                // Attach listeners to trigger calculateCost() when inputs change
+                casesRange.addEventListener('input', updateCasesDisplayAndCalculate);
+                inputTokensInput.addEventListener('input', calculateCost);
+                outputTokensInput.addEventListener('input', calculateCost);
+            };
+        })(); // End of IIFE
+    </script>
 </body>
 </html>
